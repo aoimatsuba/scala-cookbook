@@ -28,4 +28,21 @@ object chapter1 {
     """.stripMargin
 
   println(multilineStringMargin)
+
+  // #3 Split a string into parts based on separator.
+  val longString = "Apple Orange Udon"
+  longString.split(" ") // split will return Array of splitted strings
+  longString.split("X") // if separator doesn't exist, just return Array of the original string
+
+  longString.split(" ").foreach(x => println(x.toUpperCase))
+
+  // Note for usecase for CSV files etc
+  val longStringWithComma = "Apple, Orange, Udon"
+  longStringWithComma.split(",") // this will have extra space
+  longStringWithComma.split(",").map(_.trim)
+
+  "something".split("e") // This split is from String.java
+  "something".split('e') // This split is from StringLike.scala
+
+  
 }
