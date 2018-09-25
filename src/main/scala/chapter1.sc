@@ -44,5 +44,18 @@ object chapter1 {
   "something".split("e") // This split is from String.java
   "something".split('e') // This split is from StringLike.scala
 
-  
+  // #4 Variable substitution to a string
+  val name = "Aoi"
+  val age = 26
+  val company = "AutoScout24"
+
+  println(s"$name at age $age is working at $company.")
+  // Finding from above: if you try to include val in the string, it will automatically add `s` for you in the front.
+  println(s"Next year, $name will be ${age + 1}")
+
+  // 's' is actually a method
+  // There are other string interpolator methods like 'f' and 'raw'
+  println(raw"something\nsomething")
+  println("something\nsomething")
+
 }
