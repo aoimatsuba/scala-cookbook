@@ -1,5 +1,5 @@
 object chapter1 {
-  // #1 Compare two strings to see if they are 'equal'. (contains the same sequence of chars)
+  // ##########1 Compare two strings to see if they are 'equal'. (contains the same sequence of chars)
 
   val s1 = "hello"
   val s2 = "HeLlo"
@@ -13,7 +13,7 @@ object chapter1 {
   s1.equalsIgnoreCase(s2)
 
 
-  // #2 Create multiline strings
+  // ###########2 Create multiline strings
   val multilineString =
     """some
       multi
@@ -29,7 +29,8 @@ object chapter1 {
 
   println(multilineStringMargin)
 
-  // #3 Split a string into parts based on separator.
+
+  // ###########3 Split a string into parts based on separator.
   val longString = "Apple Orange Udon"
   longString.split(" ") // split will return Array of splitted strings
   longString.split("X") // if separator doesn't exist, just return Array of the original string
@@ -44,7 +45,8 @@ object chapter1 {
   "something".split("e") // This split is from String.java
   "something".split('e') // This split is from StringLike.scala
 
-  // #4 Variable substitution to a string
+
+  // ##########4 Variable substitution to a string
   val name = "Aoi"
   val age = 26
   val company = "AutoScout24"
@@ -57,5 +59,25 @@ object chapter1 {
   // There are other string interpolator methods like 'f' and 'raw'
   println(raw"something\nsomething")
   println("something\nsomething")
+
+
+  // ############5 Iterate through each character in a string
+  company.map(c => c.toUpper)
+  company.map(_.toUpper)
+
+  for (c <- name) println(c)
+
+  // map and for/yield transform one collection to another
+  val brabra = for (c <- company) yield c.toUpper
+  val brabrabra = for {
+    c <- company
+    if c != 'u'
+  } yield c.toUpper
+
+  // where as foreach operates on each element w/o returning the result
+  val braforeach = company.foreach(c => c.toUpper)
+
+  def toUpper(c: Char) = c.toUpper
+  "somethingsomething".map(toUpper)
 
 }
