@@ -80,4 +80,29 @@ object chapter1 {
   def toUpper(c: Char) = c.toUpper
   "somethingsomething".map(toUpper)
 
+
+  // ############6 Determine if a String contains a regular expression
+
+  // Can create Regex object by invoking .r method
+  val numberRegex = "[0-9]+".r // -> scala.util.matching.Regex
+
+  val sentenceWithNum = "My address is 24 Buelow street. Apt is on 2nd floor."
+
+  numberRegex.findFirstIn(sentenceWithNum)
+  numberRegex.findAllIn(sentenceWithNum).foreach(println)
+  numberRegex.findAllIn(sentenceWithNum).toArray
+
+  // Other way to Create Regex: just import Regex class
+  import scala.util.matching.Regex
+  val numRegex = new Regex("[0-9]+")
+  numRegex.findAllIn(sentenceWithNum).toVector
+  val sentenceWithoutNum = "Something something"
+  numRegex.findAllIn(sentenceWithoutNum)
+  numRegex.findAllIn(sentenceWithoutNum).toArray
+  numRegex.findFirstIn(sentenceWithoutNum)
+
+
+  // ############7 Find Regex pattern in string and replace them
+
+  numberRegex.replaceAllIn(sentenceWithNum, "***")
 }
