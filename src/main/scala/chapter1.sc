@@ -105,4 +105,20 @@ object chapter1 {
   // ############7 Find Regex pattern in string and replace them
 
   numberRegex.replaceAllIn(sentenceWithNum, "***")
+
+
+  // ############8 Extract one or more parts of string that match Regex pattern
+
+  val someNumAndLetter = "([0-9]+) ([A-Za-z]+)".r
+  // Extract each regex as different params
+  val someNumAndLetter(number, alphabet) = "24 Buelow"
+  // In order to avoid scala.MatchError, spacing and regex must be exactly the same
+  // It is NOT that it will extract all the patterns from the sentence
+
+
+
+
+
+
+
 }
