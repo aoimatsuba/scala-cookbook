@@ -116,8 +116,26 @@ object chapter1 {
   // It is NOT that it will extract all the patterns from the sentence
 
 
+  // ############9 Get a character at a specific position in a string
+
+  sentenceWithNum.charAt(3)
+
+  "sentence with num"(3) // Array notation
+  sentenceWithNum(7)
+
+  // which is actually
+  sentenceWithNum.apply(7)
 
 
+  // ############10 Add own behaviors to the String class w/o using StringUtilities class
+  implicit class StringImprovement(s: String) {
+    def makeStringAsQuote = "A man said, '" + s + ".'"
+  }
+
+  "Something something".makeStringAsQuote
+
+  // For REPL you can use the custom method like above, but for real-world code, the implicit class either needs to be
+  // defined inside a class / object / or package object
 
 
 
