@@ -43,4 +43,29 @@ object chapter2 {
   a.isValidLong
   a.isValidByte
   a.isValidInt
+
+
+  //#########3 Override default numeric type
+  val num = 23 // -> Int
+  val numD = 23d // -> Double
+  val numL = 23L // -> Long
+
+  // Another annotation
+  val numDouble = 24 : Double
+  val numByte = 11 : Byte
+  val numDouble0 = 0 : Double
+
+  // or just
+  val numDoublee : Double = 0
+
+
+  //#########4 Increment/Decrement numbers w/o using ++/--
+  var numVar = 23
+  numVar += 1
+  println(numVar)
+  numVar -= 2
+  println(numVar)
+
+  // num += 2 will get coompiler error: "value += is not a member of Int"
+
 }
