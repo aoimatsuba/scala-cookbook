@@ -1,4 +1,4 @@
-object chapter6_1 {
+object chapter6_a {
 
   // #########1 Cast a class instance to a different type
   // use asInstance of
